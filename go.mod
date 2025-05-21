@@ -1,4 +1,4 @@
-module github.com/cxocodehub/golang-backend
+module github.com/cxocodehub/go-backend-workout
 
 go 1.24.3
 

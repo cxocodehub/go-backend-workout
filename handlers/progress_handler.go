@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/cxocodehub/golang-backend/models"
+	"github.com/cxocodehub/go-backend-workout/models"
 	"github.com/gofr-dev/gofr"
 )
 

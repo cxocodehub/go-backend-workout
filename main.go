@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/cxocodehub/golang-backend/handlers"
-	"github.com/cxocodehub/golang-backend/models"
+	"github.com/cxocodehub/go-backend-workout/handlers"
+	"github.com/cxocodehub/go-backend-workout/models"
 	"github.com/gofr-dev/gofr"
 )
 
