@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workout-app
+  labels:
+    app: workout-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: workout-app
+  template:
+    metadata:
+      labels:
+        app: workout-app
+    spec:
+      containers:
+      - name: workout-app
+        image: workout-app:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+        envFrom:
+        - configMapRef:
+            name: workout-app-config
+        - secretRef:
+            name: workout-app-secrets
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+          requests:
+            cpu: "200m"
+            memory: "256Mi"
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8000
+          initialDelaySeconds: 15
+          periodSeconds: 20

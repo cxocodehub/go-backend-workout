@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: workout-app-config
+data:
+  PORT: "8000"
+  ENV: "production"
+  DB_HOST: "workout-db"
+  DB_PORT: "3306"
+  DB_NAME: "workout_db"
